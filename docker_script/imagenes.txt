@@ -1,0 +1,20 @@
+# Imagenes Base
+
+1) docker pull mysql:5.7
+2) docker pull phpmyadmin/phpmyadmin
+3) docker pull moxel/python3
+4) docker pull openjdk:8
+5) docker pull pivotalpa/angular_cli
+
+# Imagen base   Imagen ampliada           Archivo de respaldo
+#     3         danielcruzmx/django31     django_ciec.tar
+#     4         danielcruzmx/javagrpc32   java_ciec.tar
+
+# Recuperacion de imagenes
+
+docker load -i <archivo.tar>
+
+# Respaldo de imagenes 
+
+docker save -o <archivo.tar> <imagen>
+

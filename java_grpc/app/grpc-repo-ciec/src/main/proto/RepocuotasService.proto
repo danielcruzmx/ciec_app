@@ -1,0 +1,15 @@
+syntax = "proto3";
+package danielcruzmx.example.grpc;
+
+message RepocuotasRequest {
+  string name = 1;
+  repeated string hobbies = 2;
+}
+
+message RepocuotasResponse {
+  string repocuotas = 1;
+}
+
+service RepocuotasService {
+  rpc repocuotas(RepocuotasRequest) returns (RepocuotasResponse);
+}
