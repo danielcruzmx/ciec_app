@@ -6,15 +6,14 @@
 4) docker pull openjdk:8
 5) docker pull pivotalpa/angular_cli
 
-# Imagen base   Imagen ampliada           Archivo de respaldo
-#     3         danielcruzmx/django31     django_ciec.tar
-#     4         danielcruzmx/javagrpc32   java_ciec.tar
+# Imagen base   Imagen ampliada               Archivo de respaldo
+#     3         danielcruzmx/django31         django_ciec.tar
+#     4         danielcruzmx/javagrpc32       java_ciec.tar
 
 # Recuperacion de imagenes
 
 docker load -i <archivo.tar>
 
-# Respaldo de imagenes 
+# Respaldo de imagenes
 
 docker save -o <archivo.tar> <imagen>
-

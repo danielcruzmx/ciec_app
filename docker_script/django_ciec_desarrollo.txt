@@ -1,0 +1,3 @@
+# Creacion del contenedor de django para desarrollo y pruebas
+
+docker run -dit --rm --name django_ciec_desarrollo -v  --link

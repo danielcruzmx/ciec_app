@@ -14,4 +14,4 @@ docker run --name mysql_ciec -v v_data_ciec:/var/lib/mysql -e MYSQL_ROOT_PASSWOR
 
 docker run --name phpmyadmin_ciec -d --link mysql_ciec:db -p 8080:80 phpmyadmin/phpmyadmin
 
-# Entrar al navegador del host y dar http://localhost:8080/   usuario->root , password->XXXXXXXX 
+# Entrar al navegador del host y dar http://localhost:8080/   usuario->root , password->XXXXXXXX
