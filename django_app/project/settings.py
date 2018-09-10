@@ -96,7 +96,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
         'NAME':   'ciecv31',
-        'USER':   'ciecv31',
+        'USER':   'root',
         'PASSWORD': 'valeria1',
         'HOST':   'db',
         'PORT':   '3306'
