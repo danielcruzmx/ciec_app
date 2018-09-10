@@ -1,0 +1,17 @@
+# Generacion de volumen para base de datos
+
+docker volume create v_data_ciec
+
+# Creacion del contenedor de MySQL
+
+docker run --name mysql_ciec -v v_data_ciec:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=XXXXXXXX -d mysql:5.7
+
+# Generacion de base de datos con respaldo previo
+
+ cat .\respaldo_9_sept_2018.sql | docker exec -i mysql_ciec /usr/bin/mysql -u root --password=XXXXXXXX
+
+# Creacion del contenedor de phpMyAdmin para mantenimiento de la base de datos MySqL
+
+docker run --name phpmyadmin_ciec -d --link mysql_ciec:db -p 8080:80 phpmyadmin/phpmyadmin
+
+# Entrar al navegador del host y dar http://localhost:8080/   usuario->root , password->XXXXXXXX 
