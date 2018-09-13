@@ -1,0 +1,16 @@
+# Secuencia de instalacion de contenedores y puesta en marcha
+
+1) Generacion de contenedor de base de datos y administrador phpMyAdmin (base_de_datos.txt)
+2) Descarga de codigo fuente en volumen (codigo_fuente.txt)
+3) Generacion del contenedor JAVA-GRPC (java_grpc_service.txt)
+4) Generacion del contenedor PYTHON-DJANGO (django_ciec_desarrollo.txt)
+5) Generacion del contenedor ANGULAR (angular_client.txt)
+
+# TIPS
+
+Las imagenes ampliadas tienen las bibliotecas necesarias para el correcto funcionamiento del codigo fuente (ver imagenes.txt)
+Se procura que todo el codigo fuente tenga un respaldo siempre actualizado en GITHUB y BitBucket
+Se procura que la informacion del modelo de base de datos, procedimientos, funciones, tiggers y datos tengan respaldo en GITHUB y BitBucket
+Lo anterior hace que los contenedores sean "deshechables", ya que se pueden regenerar en cualquier momento
+
+

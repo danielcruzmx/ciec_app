@@ -5,10 +5,15 @@
 3) docker pull moxel/python3
 4) docker pull openjdk:8
 5) docker pull pivotalpa/angular_cli
+6) docker pull atmoz/sftp
+7) docker pull ubuntu
 
-# Imagen base   Imagen ampliada               Archivo de respaldo
-#     3         danielcruzmx/django31         django_ciec.tar
-#     4         danielcruzmx/javagrpc32       java_ciec.tar
+# Imagenes ampliadas
+
+	Imagen Base 		Imagen ampliada        	       	Archivo de Respaldo 		Software adicional
+	moxel/python		danielcruzmx/django31			django_ciec.tar				requirements.txt de la aplicacion, soporte GRPC, editor nano, GIT
+	openjdk:8			danielcruzmx/javagrpc32			java_ciec.tar				Maven, soporte GRPC, editor nano, GIT
+
 
 # Recuperacion de imagenes
 
