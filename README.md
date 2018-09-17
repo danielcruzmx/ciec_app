@@ -1,11 +1,11 @@
-** Sistema Cuotas, Ingresos y Egresos Condominales **
+** Sistema Cuotas, Ingresos y Egresos Condominales - CIEC**
 
-Desarrollada en Python3-Django2 (django_app)
+Desarrollada en Python3-Django2 
 
-Base de datos Mysql (respaldo_bd)
+Base de datos Mysql
 
-Infraestructura de contenedores (docker_script)
+Infraestructura de contenedores 
 
-Interface con java-jasper via GRPC (java_grpc)
+Interface con java-jasper via GRPC 
 
-En pruebas un cliente Angular 4 (angular_client)
+En pruebas un cliente Angular 4 
