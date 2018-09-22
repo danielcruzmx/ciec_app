@@ -64,7 +64,7 @@ class CondominoAdmin(admin.ModelAdmin):
 	def genera_reportes(self, request, queryset):
             for obj in queryset:
                print(" genera reporte %s " % obj.depto)
-               envio = "http://172.17.0.5:8085/api-rest/olimpo/informe/%s" % obj.depto
+               envio = "http://172.18.151.43:8090/api-rest/olimpo/informe/%s" % obj.depto
                run(envio)
             self.message_user(request, " Fin del proceso de generacion de reportes ")
 

@@ -64,7 +64,7 @@ class Condomino(models.Model):
         return mark_safe('<a href="/explorer/5/download?format=csv&params=depto:\'%s\'">Cuotas *.csv</a>' % (self.depto))
 
     def reporte(self):
-        return mark_safe('<a href="/%s">Reporte PDF</a>' % (self.depto))
+        return mark_safe('<a href="/media/%s.pdf" target="_blank">Reporte PDF</a>' % (self.depto))
 
     cargos.allow_tags = True
     depositos.allow_tags = True

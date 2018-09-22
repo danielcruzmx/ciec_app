@@ -3,6 +3,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from main import views
 from rest_framework import routers
+from django.conf.urls.static import static
 
 #from welcome.views import index, health
 admin.site.site_header = "Cuotas, Ingresos y Egresos Condominales"
@@ -26,7 +27,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^explorer/', include('explorer.urls')),
     url(r'^catalogos/', include(router.urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 '''if settings.DEBUG:
     import debug_toolbar

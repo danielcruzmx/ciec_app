@@ -53,13 +53,13 @@ public class RepocuotasServiceImpl extends RepocuotasServiceGrpc.RepocuotasServi
     String[] depto = request.getName().split("/");
 
     System.out.println(depto[depto.length-1]);
-
+	
 	  try {
 
         // getName() es la direccion HTTP del servicio REST de la aplicación Django
         //
         obtDatos(request.getName());
-		    generaReporte(depto[depto.length-1], "/home/app/grpc-repo-ciec/resultados/", "/home/app/grpc-repo-ciec/src/main/resources/Cuotas.jasper" );
+		generaReporte(depto[depto.length-1], "/tmp/", "/home/java_grpc/app/grpc-repo-ciec/src/main/resources/Cuotas.jasper" );
 
 	  } catch (IOException e) {
 		      e.printStackTrace();
