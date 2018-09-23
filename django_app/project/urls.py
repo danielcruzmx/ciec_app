@@ -5,6 +5,9 @@ from main import views
 from rest_framework import routers
 from django.conf.urls.static import static
 
+from django.conf.urls import handler404
+from main.views import mi_error_404
+
 #from welcome.views import index, health
 admin.site.site_header = "Cuotas, Ingresos y Egresos Condominales"
 admin.site.site_title = "CIEC Admin Portal"
@@ -12,6 +15,8 @@ admin.site.index_title = "Bienvenido al Admin CIEC"
 
 router = routers.DefaultRouter()
 router.register(r'menu', views.MenuViewSet)
+
+handler404 = mi_error_404
 
 urlpatterns = [
     # Examples:

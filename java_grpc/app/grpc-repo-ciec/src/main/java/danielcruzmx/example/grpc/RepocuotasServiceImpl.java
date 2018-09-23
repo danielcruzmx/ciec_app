@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
@@ -29,7 +30,7 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-
+import net.sf.jasperreports.engine.JRParameter;
 
 public class RepocuotasServiceImpl extends RepocuotasServiceGrpc.RepocuotasServiceImplBase {
 
@@ -90,14 +91,17 @@ public class RepocuotasServiceImpl extends RepocuotasServiceGrpc.RepocuotasServi
 
     	parameters.put("saldo",ultima.getSaldo());
 
-    	Calendar c = Calendar.getInstance();
+		Locale spanishLocale = new Locale("es", "MX");
+    	Calendar c = Calendar.getInstance(spanishLocale);
     	c.setTime(ultima.getFecha());
     	c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH));
     	Date end = c.getTime();
-    	SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy", spanishLocale);
     	String corte = sdf.format(end);
 
     	parameters.put("corte", corte);
+    	//parameters.put(JRParameter.REPORT_LOCALE, spanishLocale);
+    	parameters.put("REPORT_LOCALE", new java.util.Locale("ES")); 
 
     	JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(lstCuotas);
     	JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parameters, beanColDataSource);

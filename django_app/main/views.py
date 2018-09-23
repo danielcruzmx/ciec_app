@@ -11,6 +11,8 @@ from main.serializer import MenuSerializer
 #from rest_framework.settings import api_settings
 #from rest_framework_csv import renderers as r
 
+from django.views.defaults import page_not_found
+
 # UTILS
 def dictfetchall(cursor):
 	desc = cursor.description
@@ -18,6 +20,13 @@ def dictfetchall(cursor):
        dict(zip([col[0] for col in desc],row))
        for row in cursor.fetchall()
 	]
+
+
+# Pagina de error 404
+
+def mi_error_404(request):
+	nombre_template = '404.html'
+	return page_not_found(request, template_name=nombre_template)
 
 # Catalogos serializados
 
