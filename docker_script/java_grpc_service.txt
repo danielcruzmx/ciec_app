@@ -1,7 +1,0 @@
-# Creacion del volumen que guarda reportes PDF's
-
-docker volume create v_reports_ciec
-
-# Creacion del contenedor java con el servicio GRPC
-
-docker run -dit --name java_ciec -v v_reports_ciec:/home/app/grpc_repo_ciec/resultados -v /host_mnt/e/REPOSITORIOS/proyecto_ciec/java_grpc:/home -p 5051:5051 -p 8000:8000  danielcruzmx/javagrpc32
